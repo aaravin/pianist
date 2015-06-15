@@ -1,0 +1,4 @@
+.DS_Store
+
+# bower modules
+bower_components/
