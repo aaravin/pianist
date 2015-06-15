@@ -43,7 +43,7 @@
 .key.black:after {
     content: "";
     position: absolute;
-    top: -2px;
+    top: -10px;
     left: -16px;
     display: block;
     width: 32px;
@@ -61,4 +61,17 @@
 .key.black.pressed:after,
 .key.black:active:after {
     background-color: #222;
+}
+
+.num {
+    position: absolute; 
+    bottom: 0; 
+}
+
+.num_top {
+    z-index: 3;
+    position: absolute;
+    left: -15px; 
+    bottom: 0;
+    color: #fff;
 }
