@@ -89,7 +89,7 @@ activeSounds = {};
 
 $(document).ready(function() {
   for (var key in mappings) {
-    $('#keyMappings').append('<div id="' + key + '" class="pair">' + key + ': <input type="text" value="' + mappings[key] + '"></div>');
+    $('#keyMappings').append('<div class="pair">' + key + ': <input id="' + key + '" type="text" value="' + mappings[key] + '"></div>');
   }
 
   $(".key").mousedown(function(e) {
@@ -107,27 +107,23 @@ $(document).ready(function() {
 });
 
 $(document).keydown(function(e) {
-  for (var key in mappings) {
-    if (String.fromCharCode(e.keyCode) === key) {
-      var nums = mappings[key];
-      for (var i = 0; i < nums.length; i++) {
-        if (!($('div[data-key=' + nums[i] + ']').hasClass('pressed'))) {
-          $('div[data-key=' + nums[i] + ']').trigger('mousedown');
-          $('div[data-key=' + nums[i] + ']').addClass('pressed');
-        }
-      }
+  var numString =$('#' + String.fromCharCode(e.keyCode)).val();
+  var nums = numString.split(','); 
+
+  for (var i = 0; i < nums.length; i++) {
+    if (!($('div[data-key=' + nums[i] + ']').hasClass('pressed'))) {
+      $('div[data-key=' + nums[i] + ']').trigger('mousedown');
+      $('div[data-key=' + nums[i] + ']').addClass('pressed');
     }
   }
 });
 
 $(document).keyup(function(e) {
-  for (var key in mappings) {
-    if (String.fromCharCode(e.keyCode) === key) {
-      var nums = mappings[key];
-      for (var i = 0; i < nums.length; i++) {
-        $('div[data-key=' + nums[i] + ']').trigger('mouseup');
-        $('div[data-key=' + nums[i] + ']').removeClass('pressed');
-      }
-    }
+  var numString =$('#' + String.fromCharCode(e.keyCode)).val();
+  var nums = numString.split(','); 
+
+  for (var i = 0; i < nums.length; i++) {
+    $('div[data-key=' + nums[i] + ']').trigger('mouseup');
+    $('div[data-key=' + nums[i] + ']').removeClass('pressed');
   }
 });
