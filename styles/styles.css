@@ -1,9 +1,14 @@
+body {
+    background-color: #D8D8D8;
+}
+
 #piano {
     position: relative;
     margin: 0 auto;
+    margin-top: 20px;
     padding:16px 40px 16px;
     width: 782px;
-    background: #f33;
+    background: #CC3333;
     border-radius: 20px;
     box-shadow: 0 1px 0 #999, 0 2px 0 #999, 0 3px 0 #999, 1px 4px 0 #999, 2px 5px 0 #999, 3px 6px 0 #999, 4px 7px 0 #999, 5px 8px 0 #999, 0 0 8px #000;
     z-index: 2;
@@ -60,7 +65,9 @@
 }
 .key.black.pressed:after,
 .key.black:active:after {
-    background-color: #222;
+    /*background-color: #222;*/
+    background: #404040;
+    box-shadow: inset 3px 2px 3px #999, inset -3px 2px 3px #999;
 }
 
 .num {
@@ -82,7 +89,7 @@
     margin-top: 40px;
     padding:16px 40px 16px;
     width: 782px;
-    background: #f33;
+    background: #CC3333;
     border-radius: 20px;
     box-shadow: 0 1px 0 #999, 0 2px 0 #999, 0 3px 0 #999, 1px 4px 0 #999, 2px 5px 0 #999, 3px 6px 0 #999, 4px 7px 0 #999, 5px 8px 0 #999, 0 0 8px #000;
     z-index: 2;
@@ -94,5 +101,6 @@
 }
 
 input {
+    background-color: #D8D8D8;
     width: 20px;
 }
